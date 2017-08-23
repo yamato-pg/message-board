@@ -11,6 +11,21 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'MessagesController@index');
+
+// create: 新規作成用のフォームページ
+Route::get('messages/create', 'MessagesController@create');
+
+// CRUD
+Route::get('messages/{id}', 'MessagesController@show')->name('messages.show');
+Route::post('messages', 'MessagesController@store')->name('messages.store');
+Route::put('messages/{id}', 'MessagesController@update')->name('messages.update');
+Route::delete('messages/{id}', 'MessagesController@destroy')->name('messages.destroy');
+
+// index: showの補助ページ
+Route::get('messages', 'MessagesController@index');
+
+
+
+// edit: 更新用のフォームページ
+Route::get('messages/{id}/edit', 'MessagesController@edit')->name('messages.edit');
