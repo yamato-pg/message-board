@@ -4,7 +4,10 @@
 
     <h1>メッセージ新規作成ページ</h1>
 
-    {!! Form::model($message, ['route' => 'messages.store']) !!}
+    {!! Form::model($message, ['add .route' => 'messages.store']) !!}
+
+        {!! Form::label('title', 'タイトル:') !!}
+        {!! Form::text('title') !!}
 
         {!! Form::label('content', 'メッセージ:') !!}
         {!! Form::text('content') !!}
