@@ -14,7 +14,7 @@
 Route::get('/', 'MessagesController@index');
 
 // create: 新規作成用のフォームページ
-Route::get('messages/create', 'MessagesController@create');
+Route::get('messages/create', 'MessagesController@create')->name('messages.create');
 
 // CRUD
 Route::get('messages/{id}', 'MessagesController@show')->name('messages.show');
